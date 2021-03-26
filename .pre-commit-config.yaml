@@ -1,0 +1,7 @@
+---
+repos:
+  - repo: https://github.com/timhourigan/pre-commit-hooks
+    rev: 0.2.0
+    hooks:
+      - id: shellcheck
+        stages: [commit]

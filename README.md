@@ -1,6 +1,6 @@
-# ansible-educational-apps
+# Ansible Playbooks
 
-A collection of Ansible playbooks to install educational applications and games.
+A selection of Ansible playbooks and roles.
 
 ## Prerequisites
 
@@ -16,14 +16,8 @@ python3 -m pip install pipenv
 
 ## Usage
 
-* Setup the virtual environment
+* Setup the virtual environment. Add `--dev`, for development.
 
 ```shell
-pipenv sync
-```
-
-* If pipenv command is not found, add the python user packages to PATH by including the following line in `~/.profile` and `source ~/.profile`
-
-```shell
-PATH="$(python3 -m site --user-base)/bin:${PATH}"
+pipenv sync --dev
 ```

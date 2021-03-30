@@ -1,0 +1,5 @@
+---
+rules:
+  truthy:
+    # Stop "on:" in github workflows from raising issues
+    check-keys: false

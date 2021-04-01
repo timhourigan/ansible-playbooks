@@ -4,10 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+ansible-lint = "*"
 pre-commit = "*"
 
 [packages]
-ansible = "*"
+# FIXME - Move to ansible-core, once out of pre-release
+ansible-base = "*"
 
 [requires]
 python_version = "3.8"

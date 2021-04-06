@@ -21,3 +21,10 @@ python3 -m pip install pipenv
 ```shell
 pipenv sync --dev
 ```
+## Role Development
+
+* Create a role structure with `molecule`.
+
+```shell
+molecule init role <role-name> --driver-name docker
+```

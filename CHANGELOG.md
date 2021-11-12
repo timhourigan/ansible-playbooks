@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2021-11-12
+
+### Fixed
+
+- Attempt to fix the version and tag workflow
+
 ## [0.3.0] - 2021-11-12
 
 ### Changed

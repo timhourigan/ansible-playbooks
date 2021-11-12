@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2021-11-12
+
+### Changed
+
+- Updated Python to 3.9
+- Updated Pipfile.lock
+
 ## [0.2.0] - 2021-03-30
 
 ### Added

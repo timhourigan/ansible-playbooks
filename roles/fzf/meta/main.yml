@@ -2,24 +2,15 @@ galaxy_info:
   author: Tim Hourigan
   description: Install fzf
   license: MIT
-  min_ansible_version: 2.1
-
-  # FIXME
-  # Provide a list of supported platforms, and for each platform a list of versions.
-  # If you don't wish to enumerate all versions for a particular platform, use 'all'.
-  # To view available platforms and versions (or releases), visit:
-  # https://galaxy.ansible.com/api/v1/platforms/
-  #
-  # platforms:
-  # - name: Fedora
-  #   versions:
-  #   - all
-  #   - 25
-  # - name: SomePlatform
-  #   versions:
-  #   - all
-  #   - 1.0
-  #   - 7
-  #   - 99.99
+  min_ansible_version: 2.5
+  role_name: fzf
+  namespace: timhourigan
+  platforms:
+  - name: Fedora
+    versions:
+    - 34
+  - name: Ubuntu
+    versions:
+    - focal
   galaxy_tags: ["fzf"]
 dependencies: []

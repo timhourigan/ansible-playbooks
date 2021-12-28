@@ -1,6 +1,15 @@
 ---
 - name: Converge
   hosts: all
+  pre_tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: true
+      when: ansible_os_family == "Debian"
+    - name: Update dnf cache
+      dnf:
+        update_cache: true
+      when: ansible_os_family == "Redhat"
   tasks:
     - name: "Include fzf"
       include_role:

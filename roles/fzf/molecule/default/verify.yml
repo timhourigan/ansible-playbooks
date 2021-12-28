@@ -1,10 +1,11 @@
 ---
-# This is an example playbook to execute Ansible tests.
-
 - name: Verify
   hosts: all
   gather_facts: false
   tasks:
-  - name: Example assertion
+  - name: Gather package facts
+    ansible.builtin.package_facts:
+      manager: auto
+  - name: Verify fzf is installed
     assert:
-      that: true
+      that: "'fzf' in ansible_facts.packages"

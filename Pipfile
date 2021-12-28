@@ -8,8 +8,7 @@ molecule = { version = "*", extras = ["lint","docker"]}
 pre-commit = "*"
 
 [packages]
-# FIXME - Move to ansible-core, once out of pre-release
-ansible-base = "*"
+ansible-core = "*"
 
 [requires]
 python_version = "3.9"

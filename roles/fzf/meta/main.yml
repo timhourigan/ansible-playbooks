@@ -21,5 +21,5 @@ galaxy_info:
   #   - 1.0
   #   - 7
   #   - 99.99
-  galaxy_tags: "fzf"
+  galaxy_tags: ["fzf"]
 dependencies: []

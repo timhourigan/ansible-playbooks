@@ -1,6 +1,8 @@
 # Definitions
 
 ECHO=echo
+LINT_ANSIBLE=ansible-lint
+LINT_YAML=yamllint
 PIPENV=PIPENV_VENV_IN_PROJECT=1 pipenv
 VIRUAL_ENV=.venv
 
@@ -8,7 +10,11 @@ VIRUAL_ENV=.venv
 
 .PHONY: lint
 lint: $(VIRUAL_ENV) ## Lint files
-	@$(ECHO) "FIXME"
+	@$(PIPENV) run $(LINT_ANSIBLE) .
+
+.PHONY: lint-yaml
+lint-yaml: $(VIRUAL_ENV) ## Lint YAML files specifically
+	@$(PIPENV) run $(LINT_YAML) .
 
 .PHONY: env-lock
 env-lock: ## Update environment lock file
@@ -20,7 +26,7 @@ env-update: ## Update environment
 
 .PHONY: clean-all
 clean-all: ## Clean, including virtual environment
-	$(PIPENV) --rm
+	@$(PIPENV) --rm
 
 $(VIRUAL_ENV):
 	@$(ECHO) "Creating virtual environment"

@@ -6,11 +6,15 @@ galaxy_info:
   role_name: fzf
   namespace: timhourigan
   platforms:
+  - name: Debian
+    versions:
+      - bullseye
   - name: Fedora
     versions:
     - 34
   - name: Ubuntu
     versions:
     - focal
-  galaxy_tags: ["fzf"]
+  galaxy_tags:
+    - fzf
 dependencies: []

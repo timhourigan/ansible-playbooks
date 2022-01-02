@@ -5,6 +5,12 @@ driver:
   name: docker
 platforms:
   # Using Jeff Geerling images, with systemd capabilities
+  - name: molecule-debian-11
+    image: geerlingguy/docker-debian11-ansible
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
   - name: molecule-fedora-34
     image: geerlingguy/docker-fedora34-ansible
     volumes:

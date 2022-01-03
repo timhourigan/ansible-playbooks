@@ -2,6 +2,7 @@
 
 ECHO=echo
 GREP=grep
+TEST_ANSIBLE=molecule test
 LINT_ANSIBLE=ansible-lint
 LINT_YAML=yamllint
 PIPENV=PIPENV_VENV_IN_PROJECT=1 pipenv
@@ -9,12 +10,18 @@ VIRUAL_ENV=.venv
 
 # Targets
 
+default: help
+
+.PHONY: test
+test: $(VIRUAL_ENV) ## Test Ansible
+	@$(PIPENV) run $(TEST_ANSIBLE)
+
 .PHONY: lint
-lint: $(VIRUAL_ENV) ## Lint files
+lint: $(VIRUAL_ENV) ## Lint source
 	@$(PIPENV) run $(LINT_ANSIBLE) .
 
 .PHONY: lint-yaml
-lint-yaml: $(VIRUAL_ENV) ## Lint YAML files
+lint-yaml: $(VIRUAL_ENV) ## Lint YAML source
 	@$(PIPENV) run $(LINT_YAML) .
 
 .PHONY: env-lock

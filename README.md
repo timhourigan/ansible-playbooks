@@ -2,7 +2,14 @@
 
 A selection of Ansible playbooks and roles.
 
-## Prerequisites
+## Roles
+
+- [autojump](https://github.com/wting/autojump)
+- [fzf](https://github.com/junegunn/fzf#installation)
+
+## Role Development
+
+### Prerequisites
 
 * Python 3.9
 * Python pip (https://pip.pypa.io/en/stable/installing/)
@@ -15,7 +22,7 @@ python3 -m pip install pip --upgrade
 python3 -m pip install pipenv
 ```
 
-## Usage
+### Usage
 
 ```shell
 # Lint the Ansible
@@ -23,7 +30,7 @@ python3 -m pip install pipenv
 make lint
 ```
 
-## Role Development
+### Create a Roles
 
 * Create a role structure with `molecule`.
 

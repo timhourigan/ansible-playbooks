@@ -13,7 +13,7 @@ VIRUAL_ENV=.venv
 default: help
 
 .PHONY: test
-test: $(VIRUAL_ENV) ## Test Ansible
+test: $(VIRUAL_ENV) ## Test Ansible roles
 	@$(PIPENV) run $(TEST_ANSIBLE)
 
 .PHONY: lint
@@ -32,8 +32,8 @@ env-lock: ## Update environment lock file
 env-update: ## Update environment
 	@$(PIPENV) sync --dev
 
-.PHONY: clean-all
-clean-all: ## Clean, including virtual environment
+.PHONY: clean
+clean: ## Clean generated files, including virtual environment
 	@$(PIPENV) --rm
 
 .PHONY: help

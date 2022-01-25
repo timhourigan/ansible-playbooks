@@ -31,3 +31,20 @@ lint: |
   set -e
   yamllint .
   ansible-lint
+scenario:
+  name: default
+  converge_sequence:
+    - dependency
+    - create
+    - converge
+  test_sequence:
+    - dependency
+    - lint
+    - destroy
+    - syntax
+    - create
+    - converge
+    - idempotence
+    - verify
+    - cleanup
+    - destroy

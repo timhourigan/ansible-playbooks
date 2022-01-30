@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2022-01-30
+
+### Added
+
+- autojump
+
+### Changed
+
+- Updated Python to 3.10
+- Updated dependencies
+- Switched from `ansible-core` to `ansible`, to get community packages
+
 ## [0.5.0] - 2022-01-29
 
 ### Added

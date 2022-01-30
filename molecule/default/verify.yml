@@ -1,0 +1,11 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Gather package facts
+    ansible.builtin.package_facts:
+      manager: auto
+  - name: Verify fzf is installed
+    assert:
+      that: "'fzf' in ansible_facts.packages"

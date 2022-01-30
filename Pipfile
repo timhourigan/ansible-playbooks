@@ -4,10 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pre-commit = "*"
+# Explicitly install ansible-lint, as molecule doesn't appear to
+ansible-lint = "*"
+molecule = { version = "*", extras = ["lint","docker"]}
 
 [packages]
-ansible = "*"
+ansible-core = "*"
 
 [requires]
 python_version = "3.9"

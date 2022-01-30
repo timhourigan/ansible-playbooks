@@ -1,4 +1,7 @@
 ---
+ignore: |
+  /.venv/
+
 rules:
   truthy:
     # Stop "on:" in github workflows from raising issues

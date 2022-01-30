@@ -1,0 +1,50 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  # Using Jeff Geerling images, with systemd capabilities
+  - name: molecule-debian-11
+    image: geerlingguy/docker-debian11-ansible
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+  - name: molecule-fedora-34
+    image: geerlingguy/docker-fedora34-ansible
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+  - name: molecule-ubuntu-2004
+    image: geerlingguy/docker-ubuntu2004-ansible
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+scenario:
+  name: default
+  converge_sequence:
+    - dependency
+    - create
+    - converge
+  test_sequence:
+    - dependency
+    - lint
+    - destroy
+    - syntax
+    - create
+    - converge
+    - idempotence
+    - verify
+    - cleanup
+    - destroy

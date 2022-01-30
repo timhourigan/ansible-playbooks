@@ -4,8 +4,11 @@ A selection of Ansible playbooks and roles.
 
 ## Roles
 
-- [autojump](https://github.com/wting/autojump)
-- [fzf](https://github.com/junegunn/fzf#installation)
+| Roles                                |                                      |
+|:-------------------------------------|:-------------------------------------|
+| [info](roles/fzf/README.md)          | Productivity - Fuzzy Finder          |
+| [autojump](roles/autojump/README.md) | Productivity - Filesystem Navigation |
+
 
 ## Role Development
 

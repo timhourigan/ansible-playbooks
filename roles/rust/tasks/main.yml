@@ -1,0 +1,11 @@
+---
+- name: Download rustup-init
+  get_url:
+    url: "{{ rust_init_url }}"
+    dest: /tmp/rustup-init
+    mode: 0644
+
+- name: Run rustup-init
+  command: /tmp/rustup-init --quiet -y
+
+# FIXME - Consider users

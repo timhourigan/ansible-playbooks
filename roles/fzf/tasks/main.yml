@@ -1,5 +1,6 @@
 ---
 - name: Install
   package:
-      name: fzf
-      state: present
+    name: fzf
+    state: present
+  become: yes

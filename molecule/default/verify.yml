@@ -9,3 +9,6 @@
   - name: Verify fzf is installed
     assert:
       that: "'fzf' in ansible_facts.packages"
+  - name: Verify autojump is installed
+    assert:
+      that: "'autojump' in ansible_facts.packages"

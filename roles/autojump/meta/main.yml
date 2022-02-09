@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Tim Hourigan
+  description: Install autojump
+  license: MIT
+  min_ansible_version: 2.5
+  role_name: autojump
+  namespace: timhourigan
+  platforms:
+    - name: Debian
+      versions:
+        - bullseye
+    - name: Fedora
+      versions:
+        - 34
+    - name: Ubuntu
+      versions:
+        - focal
+  galaxy_tags:
+    - autojump
+dependencies: []

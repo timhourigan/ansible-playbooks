@@ -11,6 +11,9 @@
         update_cache: true
       when: ansible_os_family == "RedHat"
   tasks:
-    - name: Include fzf
+    - name: Include roles
       include_role:
-        name: fzf
+        name: "{{ item }}"
+      with_items:
+        - autojump
+        - fzf

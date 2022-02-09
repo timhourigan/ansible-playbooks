@@ -2,9 +2,19 @@
 
 A selection of Ansible playbooks and roles.
 
-## Prerequisites
+## Roles
 
-* Python 3.9
+| Roles                                |                                      |
+|:-------------------------------------|:-------------------------------------|
+| [info](roles/fzf/README.md)          | Productivity - Fuzzy Finder          |
+| [autojump](roles/autojump/README.md) | Productivity - Filesystem Navigation |
+
+
+## Role Development
+
+### Prerequisites
+
+* Python 3.10
 * Python pip (https://pip.pypa.io/en/stable/installing/)
 * pipenv (https://pipenv.readthedocs.io/en/stable/)
 
@@ -15,15 +25,20 @@ python3 -m pip install pip --upgrade
 python3 -m pip install pipenv
 ```
 
-## Usage
+### Usage
 
 ```shell
-# Lint the Ansible
-# On first run, this will install the Python virtual environment
-make lint
+$ make help
+clean: Clean generated files, including virtual environment
+env-lock: Update environment lock file
+env-update: Update environment
+help: This menu
+lint: Lint source
+lint-yaml: Lint YAML source
+test: Test Ansible roles 
 ```
 
-## Role Development
+### Create a Roles
 
 * Create a role structure with `molecule`.
 

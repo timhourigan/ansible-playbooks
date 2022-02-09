@@ -9,7 +9,7 @@ ansible-lint = "*"
 molecule = { version = "*", extras = ["lint","docker"]}
 
 [packages]
-ansible-core = "*"
+ansible = "*"
 
 [requires]
-python_version = "3.9"
+python_version = "3.10"

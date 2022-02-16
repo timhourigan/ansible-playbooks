@@ -6,9 +6,19 @@
   - name: Gather package facts
     ansible.builtin.package_facts:
       manager: auto
+  - name: Include vars
+    include_vars:
+      file: vars/main.yml
   - name: Verify fzf is installed
     assert:
       that: "'fzf' in ansible_facts.packages"
   - name: Verify autojump is installed
     assert:
       that: "'autojump' in ansible_facts.packages"
+  - name: Check for rust binary
+    stat:
+      path: /home/{{ username }}/.cargo/bin/rustc
+    register: rust
+  - name: Verify rust is installed
+    assert:
+      that: rust.stat.exists

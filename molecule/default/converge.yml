@@ -5,6 +5,9 @@
     - name: Include vars
       include_vars:
         file: vars/main.yml
+    - name: Create user
+      ansible.builtin.user:
+        name: "{{ username }}"
     - name: Update apt cache
       apt:
         update_cache: true
@@ -13,9 +16,6 @@
       dnf:
         update_cache: true
       when: ansible_os_family == "RedHat"
-    - name: Create user
-      ansible.builtin.user:
-        name: "{{ username }}"
   tasks:
     - name: Include roles
       include_role:

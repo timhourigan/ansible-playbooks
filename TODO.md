@@ -1,0 +1,48 @@
+# Roles to consider
+
+- python
+  - pyenv
+  - pipx
+    - pipenv
+    - ansible-playbook
+    - pre-commit
+    - black
+- docker
+  - docker-compose
+  - hadolint
+  - dozzle
+  - lazydocker
+  - ctop
+- utils
+  - ranger
+  - bat
+  - exa
+  - fd
+  - jq
+  - jless
+  - glow
+  - ripgrep
+  - grex
+  - tldr
+  - direnv
+  - figlet
+  - asciicinema
+  - sponge
+  - entr
+- terminal
+  - alacritty
+  - starship
+- system
+  - htop
+  - glances
+  - ncdu
+- dotfiles
+  - stow
+- package manager cache config
+  - apt
+  - yum/dnf
+- awesome cli lists
+  - https://github.com/agarrharr/awesome-cli-apps
+  - https://github.com/alebcay/awesome-shell
+  - https://github.com/trimstray/the-book-of-secret-knowledge
+  - https://switowski.com/blog/favorite-cli-tools

@@ -29,15 +29,21 @@
   - asciicinema
   - sponge
   - entr
+  - lnav
+- git
+  - github cli
+  - tig
+  - lazygit
 - terminal
   - alacritty
-  - starship
+  - starship?
 - system
   - htop
   - glances
   - ncdu
 - dotfiles
   - stow
+  - repo clone
 - package manager cache config
   - apt
   - yum/dnf

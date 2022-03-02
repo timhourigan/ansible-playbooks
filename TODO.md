@@ -34,9 +34,9 @@
   - github cli
   - tig
   - lazygit
-- terminal
+- rust
   - alacritty
-  - starship?
+  - starship
 - system
   - htop
   - glances

@@ -44,9 +44,11 @@
 - dotfiles
   - stow
   - repo clone
-- package manager cache config
-  - apt
-  - yum/dnf
+- package manager
+  - apt cache config
+  - yum/dnf cache config
+  - update
+  - upgrade
 - awesome cli lists
   - https://github.com/agarrharr/awesome-cli-apps
   - https://github.com/alebcay/awesome-shell

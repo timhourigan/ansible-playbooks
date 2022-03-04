@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.0] - 2022-03-04
+
+### Added
+
+- rust
+
+### Changed
+
+- Use a single yamllint configuration
+- Breakout verification to separate files
+
 ## [0.6.0] - 2022-01-30
 
 ### Added

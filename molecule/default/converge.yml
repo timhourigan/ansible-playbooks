@@ -2,6 +2,12 @@
 - name: Converge
   hosts: all
   pre_tasks:
+    - name: Include vars
+      include_vars:
+        file: vars/main.yml
+    - name: Create user
+      ansible.builtin.user:
+        name: "{{ username }}"
     - name: Update apt cache
       apt:
         update_cache: true
@@ -17,3 +23,4 @@
       with_items:
         - autojump
         - fzf
+        - rust

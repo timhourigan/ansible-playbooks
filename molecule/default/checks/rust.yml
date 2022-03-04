@@ -1,0 +1,8 @@
+---
+- name: Check for rust binary
+  stat:
+    path: /home/{{ username }}/.cargo/bin/rustc
+  register: rust
+- name: Verify rust is installed
+  assert:
+    that: rust.stat.exists

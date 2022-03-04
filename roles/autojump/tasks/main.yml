@@ -1,5 +1,6 @@
 ---
 - name: Install
   package:
-      name: autojump
-      state: present
+    name: autojump
+    state: present
+  become: yes

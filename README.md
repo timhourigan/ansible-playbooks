@@ -9,6 +9,21 @@ A selection of Ansible playbooks and roles.
 | [info](roles/fzf/README.md)          | Productivity - Fuzzy Finder          |
 | [autojump](roles/autojump/README.md) | Productivity - Filesystem Navigation |
 
+## Playbooks
+
+| Playbooks      |                      |
+|:---------------|:---------------------|
+| plays/dev.yaml | Software development |
+
+### Run Locally
+
+Local run example:
+
+```shell
+# Replace username, as desired
+# It is expected to be an existing user on the system
+$ ansible-playbook --extra-vars "username=myname" --ask-become-pass --connection local --inventory localhost, plays/dev.yaml
+```
 
 ## Role Development
 
@@ -20,9 +35,9 @@ A selection of Ansible playbooks and roles.
 
 ```shell
 # Debian/Ubuntu example
-sudo apt install python3-pip
-python3 -m pip install pip --upgrade
-python3 -m pip install pipenv
+$ sudo apt install python3-pip
+$ python3 -m pip install pip --upgrade
+$ python3 -m pip install pipenv
 ```
 
 ### Usage
@@ -35,7 +50,7 @@ env-update: Update environment
 help: This menu
 lint: Lint source
 lint-yaml: Lint YAML source
-test: Test Ansible roles 
+test: Test Ansible roles
 ```
 
 ### Create a Roles
@@ -43,5 +58,5 @@ test: Test Ansible roles
 * Create a role structure with `molecule`.
 
 ```shell
-molecule init role <role-name> --driver-name docker
+$ molecule init role <role-name> --driver-name docker
 ```

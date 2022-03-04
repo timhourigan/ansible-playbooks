@@ -27,6 +27,9 @@ provisioner:
   name: ansible
   env:
     ANSIBLE_ROLES_PATH: ../../roles
+  config_options:
+    defaults:
+      callbacks_enabled: profile_roles, profile_tasks, timer, yaml
 verifier:
   name: ansible
 lint: |

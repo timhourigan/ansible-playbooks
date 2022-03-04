@@ -7,6 +7,7 @@ LINT_ANSIBLE=ansible-lint
 LINT_YAML=yamllint
 PIPENV=PIPENV_VENV_IN_PROJECT=1 pipenv
 VIRUAL_ENV=.venv
+ROLES_PATH=roles
 
 # Targets
 
@@ -18,7 +19,7 @@ test: $(VIRUAL_ENV) ## Test Ansible roles
 
 .PHONY: lint
 lint: $(VIRUAL_ENV) ## Lint source
-	@$(PIPENV) run $(LINT_ANSIBLE) .
+	@$(PIPENV) run $(LINT_ANSIBLE) $(ROLES_PATH)
 
 .PHONY: lint-yaml
 lint-yaml: $(VIRUAL_ENV) ## Lint YAML source

@@ -1,0 +1,30 @@
+---
+- name: Check if aleady installed
+  stat:
+    path: /home/{{ username }}/.cargo/bin/rustc
+  register: rust_installed
+
+- name: Download rustup-init
+  ansible.builtin.get_url:
+    url: "{{ rust_init_url }}"
+    dest: "{{ rust_init_path }}/rustup-init"
+    mode: 0544
+  become: yes
+  become_user: "{{ username }}"
+  when: not rust_installed.stat.exists
+
+- name: Run rustup-init
+  ansible.builtin.command:
+    cmd: "{{ rust_init_path }}/rustup-init --quiet -y"
+    creates: /home/{{ username }}/.cargo/bin/rustc
+  become: yes
+  become_user: "{{ username }}"
+  when: not rust_installed.stat.exists
+
+- name: Remove rustup-init
+  ansible.builtin.file:
+    path: "{{ rust_init_path }}/rustup-init"
+    state: absent
+  become: yes
+  become_user: "{{ username }}"
+  when: not rust_installed.stat.exists

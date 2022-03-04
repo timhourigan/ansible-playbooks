@@ -7,6 +7,7 @@
     - ansible-playbook
     - pre-commit
     - black
+    - tldr - https://github.com/tldr-pages/tldr
 - docker
   - docker-compose
   - hadolint
@@ -15,7 +16,6 @@
   - ctop
 - utils
   - ranger
-  - bat
   - exa
   - fd
   - jq
@@ -23,7 +23,6 @@
   - glow
   - ripgrep
   - grex
-  - tldr
   - direnv
   - figlet
   - asciicinema

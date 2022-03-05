@@ -36,6 +36,7 @@
 - rust
   - alacritty
   - starship
+  - dust
 - system
   - htop
   - glances

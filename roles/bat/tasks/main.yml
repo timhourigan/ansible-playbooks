@@ -2,10 +2,10 @@
 # Package divert required due to a package name clash
 - name: Divert and rename batcat for Debian based distros
   community.general.dpkg_divert:
-    path: /usr/bin/bat
-    divert: /usr/bin/batcat
+    path: /usr/bin/batcat
+    divert: /usr/bin/bat
     rename: yes
-    holder: branding
+  become: yes
   when: ansible_os_family == "Debian"
 
 - name: Install

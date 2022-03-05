@@ -16,7 +16,6 @@
   - ctop
 - utils
   - ranger
-  - exa
   - fd
   - jq
   - jless

@@ -1,12 +1,20 @@
 ---
 # Manual install if Ubuntu, as exa is only in 20.10 onwards
+- name: Manual Install - Check for exa binary
+  stat:
+    path: /usr/bin/exa
+  register: exa
+  when: ansible_distribution == "Ubuntu"
+
 - name: Manual Install - Create temporary directory
   file:
     path: /tmp/exa
     state: directory
     mode: 0644
   become: yes
-  when: ansible_distribution == "Ubuntu"
+  when:
+    - ansible_distribution == "Ubuntu"
+    - not exa.stat.exists
 
 - name: Manual Install - Download
   unarchive:
@@ -14,7 +22,9 @@
     dest: /tmp/exa
     remote_src: yes
   become: yes
-  when: ansible_distribution == "Ubuntu"
+  when:
+    - ansible_distribution == "Ubuntu"
+    - not exa.stat.exists
 
 - name: Manual Install - Copy binary
   copy:
@@ -23,7 +33,9 @@
     remote_src: yes
     mode: 0755
   become: yes
-  when: ansible_distribution == "Ubuntu"
+  when:
+    - ansible_distribution == "Ubuntu"
+    - not exa.stat.exists
 
 - name: Manual Install - Copy man
   copy:
@@ -37,15 +49,20 @@
   loop_control:
         loop_var: man_item
   become: yes
-  when: ansible_distribution == "Ubuntu"
+  when:
+    - ansible_distribution == "Ubuntu"
+    - not exa.stat.exists
 
 - name: Manual Install - Remove temporary directory
   file:
     path: /tmp/exa
     state: absent
   become: yes
-  when: ansible_distribution == "Ubuntu"
+  when:
+    - ansible_distribution == "Ubuntu"
+    - not exa.stat.exists
 
+# Non-Ubuntu install
 - name: Install
   package:
     name: exa

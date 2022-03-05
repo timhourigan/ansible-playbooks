@@ -8,6 +8,7 @@ A selection of Ansible playbooks and roles.
 |:-------------------------------------|:-------------------------------------|
 | [autojump](roles/autojump/README.md) | Productivity - Filesystem Navigation |
 | [bat](roles/bat/README.md)           | Productivity - `cat` alternative     |
+| [exa](roles/exa/README.md)           | Productivity - `ls` alternative      |
 | [fzf](roles/fzf/README.md)           | Productivity - Fuzzy Finder          |
 | [rust](roles/rust/README.md)         | Development - Rust Language          |
 

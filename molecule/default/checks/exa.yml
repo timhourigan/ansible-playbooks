@@ -1,0 +1,14 @@
+---
+- name: Verify exa package is installed
+  assert:
+    that: "'exa' in ansible_facts.packages"
+  when: ansible_distribution == "Debian" or ansible_os_family == "RedHat"
+
+- name: Check for exa binary
+  stat:
+    path: /usr/bin/exa
+  register: exa
+
+- name: Verify exa binary is present
+  assert:
+    that: exa.stat.exists

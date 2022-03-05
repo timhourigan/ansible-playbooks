@@ -1,0 +1,3 @@
+---
+exa_version: 0.10.1
+exa_url: https://github.com/ogham/exa/releases/download/v{{ exa_version }}/exa-linux-x86_64-v{{ exa_version }}.zip

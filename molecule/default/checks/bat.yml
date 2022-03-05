@@ -1,5 +1,5 @@
 ---
-- name: Verify bat is installed
+- name: Verify bat package is installed
   assert:
     that: "'bat' in ansible_facts.packages"
 
@@ -7,6 +7,7 @@
   stat:
     path: /usr/bin/bat
   register: bat
-- name: Verify bat is installed
+
+- name: Verify bat binary is present
   assert:
     that: bat.stat.exists

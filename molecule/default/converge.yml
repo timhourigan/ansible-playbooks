@@ -16,6 +16,11 @@
       dnf:
         update_cache: true
       when: ansible_os_family == "RedHat"
+    - name: Install standard packages
+      package:
+        name:
+          - unzip
+        state: present
   tasks:
     - name: Include roles
       include_role:
@@ -23,5 +28,6 @@
       with_items:
         - autojump
         - bat
+        - exa
         - fzf
         - rust

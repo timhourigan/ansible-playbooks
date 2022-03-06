@@ -4,18 +4,19 @@ A selection of Ansible playbooks and roles.
 
 ## Roles
 
-| Roles                                |                                      |
-|:-------------------------------------|:-------------------------------------|
-| [autojump](roles/autojump/README.md) | Productivity - Filesystem Navigation |
-| [bat](roles/bat/README.md)           | Productivity - `cat` alternative     |
-| [exa](roles/exa/README.md)           | Productivity - `ls` alternative      |
-| [fzf](roles/fzf/README.md)           | Productivity - Fuzzy Finder          |
-| [ripgrep](roles/ripgrep/README.md)   | Productivity - `grep` alternative    |
-| [rust](roles/rust/README.md)         | Development - Rust Language          |
+| Roles                                  | Category     | Description                  |
+|:---------------------------------------|:-------------|:-----------------------------|
+| [apt_proxy](roles/apt_proxy/README.md) | System       | Configure APT proxy settings |
+| [autojump](roles/autojump/README.md)   | Productivity | Filesystem Navigation        |
+| [bat](roles/bat/README.md)             | Productivity | `cat` alternative            |
+| [exa](roles/exa/README.md)             | Productivity | `ls` alternative             |
+| [fzf](roles/fzf/README.md)             | Productivity | Fuzzy Finder                 |
+| [ripgrep](roles/ripgrep/README.md)     | Productivity | `grep` alternative           |
+| [rust](roles/rust/README.md)           | Development  | Rust Language                |
 
 ## Playbooks
 
-| Playbooks      |                      |
+| Playbooks      | Description          |
 |:---------------|:---------------------|
 | plays/dev.yaml | Software development |
 

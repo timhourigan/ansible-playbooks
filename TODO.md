@@ -48,6 +48,10 @@
   - yum/dnf cache config
   - update
   - upgrade
+- Editors
+  - atom
+  - vscode
+  - vscodium
 - awesome cli lists
   - https://github.com/agarrharr/awesome-cli-apps
   - https://github.com/alebcay/awesome-shell

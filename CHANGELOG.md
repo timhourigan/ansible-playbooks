@@ -2,11 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.7.0] - 2022-03-04
+## [0.7.0] - 2022-03-06
 
 ### Added
 
+- `apt_proxy`
 - `bat`
+- `exa`
+- `ripgrep`
 
 ## [0.7.0] - 2022-03-04
 

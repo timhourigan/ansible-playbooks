@@ -30,4 +30,5 @@
         - bat
         - exa
         - fzf
+        - ripgrep
         - rust

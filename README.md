@@ -10,8 +10,8 @@ A selection of Ansible playbooks and roles.
 | [bat](roles/bat/README.md)           | Productivity - `cat` alternative     |
 | [exa](roles/exa/README.md)           | Productivity - `ls` alternative      |
 | [fzf](roles/fzf/README.md)           | Productivity - Fuzzy Finder          |
+| [ripgrep](roles/ripgrep/README.md)   | Productivity - `grep` alternative    |
 | [rust](roles/rust/README.md)         | Development - Rust Language          |
-
 
 ## Playbooks
 

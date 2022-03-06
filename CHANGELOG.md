@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] - 2022-03-06
+
+### Added
+
+- `pipx`
+
 ## [0.8.0] - 2022-03-06
 
 ### Added

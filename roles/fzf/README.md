@@ -1,6 +1,6 @@
 # fzf
 
-Installs [fzf](https://github.com/junegunn/fzf#installation).
+Installs [fzf](https://github.com/junegunn/fzf).
 
 ## Key-Bindings / Auto Completions
 

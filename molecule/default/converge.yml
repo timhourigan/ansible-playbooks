@@ -9,11 +9,12 @@
       ansible.builtin.user:
         name: "{{ username }}"
         shell: /bin/bash
-    # Include if using an APT Proxy
-    # - name: Setup APT Proxy
-    #   include_role:
-    #     name: apt_proxy
-    #   when: ansible_os_family == "Debian"
+    - name: Setup APT Proxy
+      include_role:
+        name: apt_proxy
+      when:
+        - ansible_os_family == "Debian"
+        - apt_proxy_url is defined
     - name: Update apt cache
       apt:
         update_cache: true
@@ -39,3 +40,4 @@
         - ripgrep
         # Removed for now, due to time taken to install
         # - rust
+        - pipx

@@ -1,0 +1,13 @@
+---
+- name: Install
+  pip:
+    name: pipx
+    extra_args: --user
+  become: yes
+  become_user: "{{ username }}"
+
+- name: Run ensurepath
+  command: python3 -m pipx ensurepath
+  become: yes
+  become_user: "{{ username }}"
+  changed_when: false

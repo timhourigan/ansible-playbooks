@@ -7,6 +7,7 @@
     - ansible-playbook
     - pre-commit
     - black
+    - tldr - https://github.com/tldr-pages/tldr
 - docker
   - docker-compose
   - hadolint
@@ -15,15 +16,12 @@
   - ctop
 - utils
   - ranger
-  - bat
-  - exa
   - fd
   - jq
   - jless
   - glow
   - ripgrep
   - grex
-  - tldr
   - direnv
   - figlet
   - asciicinema
@@ -37,6 +35,7 @@
 - rust
   - alacritty
   - starship
+  - dust
 - system
   - htop
   - glances
@@ -49,6 +48,10 @@
   - yum/dnf cache config
   - update
   - upgrade
+- Editors
+  - atom
+  - vscode
+  - vscodium
 - awesome cli lists
   - https://github.com/agarrharr/awesome-cli-apps
   - https://github.com/alebcay/awesome-shell

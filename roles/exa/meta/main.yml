@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Tim Hourigan
+  description: Install exa
+  license: MIT
+  min_ansible_version: 2.5
+  role_name: exa
+  namespace: timhourigan
+  platforms:
+    - name: Debian
+      versions:
+        - bullseye
+    - name: Fedora
+      versions:
+        - 34
+    - name: Ubuntu
+      versions:
+        - focal
+  galaxy_tags:
+    - exa
+dependencies: []

@@ -1,7 +1,6 @@
 ---
 - name: Verify
   hosts: all
-  gather_facts: false
   tasks:
   - name: Gather package facts
     ansible.builtin.package_facts:
@@ -11,5 +10,11 @@
       file: vars/main.yml
   # Run checks
   - import_tasks: checks/autojump.yml
+  - import_tasks: checks/bat.yml
+  - import_tasks: checks/exa.yml
   - import_tasks: checks/fzf.yml
-  - import_tasks: checks/rust.yml
+  - import_tasks: checks/ripgrep.yml
+  # Removed, as not always used
+  # - import_tasks: checks/apt_proxy.yml
+  # Removed for now, due to time taken to install
+  # - import_tasks: checks/rust.yml

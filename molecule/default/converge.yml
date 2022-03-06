@@ -8,6 +8,11 @@
     - name: Create user
       ansible.builtin.user:
         name: "{{ username }}"
+    # Include if using an APT Proxy
+    # - name: Setup APT Proxy
+    #   include_role:
+    #     name: apt_proxy
+    #   when: ansible_os_family == "Debian"
     - name: Update apt cache
       apt:
         update_cache: true
@@ -16,11 +21,20 @@
       dnf:
         update_cache: true
       when: ansible_os_family == "RedHat"
+    - name: Install standard packages, required by Ansible modules
+      package:
+        name:
+          - unzip
+        state: present
   tasks:
     - name: Include roles
       include_role:
         name: "{{ item }}"
       with_items:
         - autojump
+        - bat
+        - exa
         - fzf
-        - rust
+        - ripgrep
+        # Removed for now, due to time taken to install
+        # - rust

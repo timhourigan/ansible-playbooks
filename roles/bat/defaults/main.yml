@@ -1,0 +1,3 @@
+---
+bat_version_debian: 0.20.0
+bat_url_debian: https://github.com/sharkdp/bat/releases/download/v{{ bat_version_debian }}/bat_{{ bat_version_debian }}_amd64.deb

@@ -1,6 +1,6 @@
-# rust
+# apt_proxy
 
-Installs [rust](https://www.rust-lang.org/) toolchain.
+Configures APT proxy settings. Currently assumes the same URL for both HTTP and HTTPS.
 
 ## Requirements
 
@@ -8,7 +8,7 @@ N/A
 
 ## Role Variables
 
-`username` - User account to install to
+apt_proxy_url - APT Proxy URL e.g. `http://192.168.0.123:3142`
 
 ## Dependencies
 
@@ -19,7 +19,7 @@ N/A
 ```yaml
     - hosts: servers
       roles:
-         - { role: rust }
+         - { role: apt_proxy }
 ```
 
 ## License

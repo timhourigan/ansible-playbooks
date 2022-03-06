@@ -1,6 +1,6 @@
-# rust
+# bat
 
-Installs [rust](https://www.rust-lang.org/) toolchain.
+Installs [bat](https://github.com/sharkdp/bat).
 
 ## Requirements
 
@@ -8,7 +8,7 @@ N/A
 
 ## Role Variables
 
-`username` - User account to install to
+N/A
 
 ## Dependencies
 
@@ -19,7 +19,7 @@ N/A
 ```yaml
     - hosts: servers
       roles:
-         - { role: rust }
+         - { role: bat }
 ```
 
 ## License

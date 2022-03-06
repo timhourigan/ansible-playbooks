@@ -1,0 +1,15 @@
+---
+# Use deb file due to packaging issue on Ubuntu - https://github.com/sharkdp/bat/issues/938
+- name: Manual Install
+  apt:
+    deb: "{{ bat_url_debian }}"
+    state: present
+  become: yes
+  when: ansible_os_family == "Debian"
+
+- name: Install
+  package:
+    name: bat
+    state: present
+  become: yes
+  when: ansible_os_family == "RedHat"

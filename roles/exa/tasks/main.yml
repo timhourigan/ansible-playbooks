@@ -1,0 +1,71 @@
+---
+# Manual install if Ubuntu, as exa is only in 20.10 onwards
+- name: Manual Install - Check for exa binary
+  stat:
+    path: /usr/bin/exa
+  register: exa
+  when: ansible_distribution == "Ubuntu"
+
+- name: Manual Install - Create temporary directory
+  file:
+    path: /tmp/exa
+    state: directory
+    mode: 0644
+  become: yes
+  when:
+    - ansible_distribution == "Ubuntu"
+    - not exa.stat.exists
+
+- name: Manual Install - Download
+  unarchive:
+    src: "{{ exa_url }}"
+    dest: /tmp/exa
+    remote_src: yes
+  become: yes
+  when:
+    - ansible_distribution == "Ubuntu"
+    - not exa.stat.exists
+
+- name: Manual Install - Copy binary
+  copy:
+    src: /tmp/exa/bin/exa
+    dest: /usr/bin/
+    remote_src: yes
+    mode: 0755
+  become: yes
+  when:
+    - ansible_distribution == "Ubuntu"
+    - not exa.stat.exists
+
+- name: Manual Install - Copy man
+  copy:
+    src: "{{ man_item }}"
+    dest: /usr/share/man/man1/
+    remote_src: yes
+    mode: 0644
+  with_items:
+    - /tmp/exa/man/exa.1
+    - /tmp/exa/man/exa_colors.5
+  loop_control:
+        loop_var: man_item
+  become: yes
+  when:
+    - ansible_distribution == "Ubuntu"
+    - not exa.stat.exists
+
+- name: Manual Install - Remove temporary directory
+  file:
+    path: /tmp/exa
+    state: absent
+  become: yes
+  when:
+    - ansible_distribution == "Ubuntu"
+    - not exa.stat.exists
+
+# Non-Ubuntu install
+- name: Install
+  package:
+    name: exa
+    state: present
+  become: yes
+  when: ansible_distribution == "Debian" or ansible_os_family == "RedHat"

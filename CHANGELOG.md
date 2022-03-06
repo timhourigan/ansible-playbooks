@@ -2,22 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.0] - 2022-03-06
+
+### Added
+
+- `apt_proxy`
+- `bat`
+- `exa`
+- `ripgrep`
+
 ## [0.7.0] - 2022-03-04
 
 ### Added
 
-- rust
+- `rust`
 
 ### Changed
 
-- Use a single yamllint configuration
+- Use a single `yamllint` configuration
 - Breakout verification to separate files
 
 ## [0.6.0] - 2022-01-30
 
 ### Added
 
-- autojump
+- `autojump`
 
 ### Changed
 
@@ -29,7 +38,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- fzf
+- `fzf`
 - Makefile structure
 - Molecule test infrastructure
 

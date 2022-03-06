@@ -1,2 +1,2 @@
 ---
-apt_proxy_url: http://192.168.10.63:3142
+apt_proxy_url: http://192.168.0.123:3142

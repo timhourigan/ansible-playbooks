@@ -21,7 +21,7 @@
       dnf:
         update_cache: true
       when: ansible_os_family == "RedHat"
-    - name: Install standard packages
+    - name: Install standard packages, required by Ansible modules
       package:
         name:
           - unzip

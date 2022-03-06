@@ -16,7 +16,7 @@
   - import_tasks: checks/ripgrep.yml
   # Removed for now, due to time taken to install
   # - import_tasks: checks/rust.yml
-
+  - import_tasks: checks/pipx.yml
   - name: Check apt_proxy
     import_tasks: checks/apt_proxy.yml
     when: apt_proxy_url is defined

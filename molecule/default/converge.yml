@@ -8,6 +8,7 @@
     - name: Create user
       ansible.builtin.user:
         name: "{{ username }}"
+        shell: /bin/bash
     # Include if using an APT Proxy
     # - name: Setup APT Proxy
     #   include_role:

@@ -1,4 +1,4 @@
 ---
-- name: Verify ripgrep package is installed
+- name: ripgrep | Verify package is installed
   assert:
     that: "'ripgrep' in ansible_facts.packages"

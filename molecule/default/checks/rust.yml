@@ -1,9 +1,9 @@
 ---
-- name: Check for rust binary
+- name: rust | Check for binary
   stat:
     path: /home/{{ username }}/.cargo/bin/rustc
   register: rust
 
-- name: Verify rust binary is present
+- name: rust | Verify binary is present
   assert:
     that: rust.stat.exists

@@ -12,6 +12,7 @@ A selection of Ansible playbooks and roles.
 | [exa](roles/exa/README.md)             | Productivity | `ls` alternative             |
 | [fzf](roles/fzf/README.md)             | Productivity | Fuzzy Finder                 |
 | [ripgrep](roles/ripgrep/README.md)     | Productivity | `grep` alternative           |
+| [pipx](roles/pipx/README.md)           | Productivity | Python application installer |
 | [rust](roles/rust/README.md)           | Development  | Rust Language                |
 
 ## Playbooks

@@ -1,4 +1,4 @@
 ---
-- name: Verify fzf package is installed
-  assert:
+- name: fzf | Verify package is installed
+  ansible.builtin.assert:
     that: "'fzf' in ansible_facts.packages"

@@ -1,6 +1,6 @@
 ---
 - name: Configure
-  template:
+  ansible.builtin.template:
     src: 00aptproxy.j2
     dest: /etc/apt/apt.conf.d/00aptproxy
     owner: root

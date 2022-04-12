@@ -1,14 +1,14 @@
 ---
 # Use deb file due to packaging issue on Ubuntu - https://github.com/sharkdp/bat/issues/938
 - name: Manual Install
-  apt:
+  ansible.builtin.apt:
     deb: "{{ bat_url_debian }}"
     state: present
   become: yes
   when: ansible_os_family == "Debian"
 
 - name: Install
-  package:
+  ansible.builtin.package:
     name: bat
     state: present
   become: yes

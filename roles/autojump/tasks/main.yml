@@ -1,6 +1,6 @@
 ---
 - name: Install
-  package:
+  ansible.builtin.package:
     name: autojump
     state: present
   become: yes

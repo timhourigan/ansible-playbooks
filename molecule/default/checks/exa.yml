@@ -1,15 +1,15 @@
 ---
-- name: Verify exa package is installed
-  assert:
+- name: exa | Verify package is installed
+  ansible.builtin.assert:
     that: "'exa' in ansible_facts.packages"
   when: ansible_distribution == "Debian" or ansible_os_family == "RedHat"
 
-# exa is only in Ubuntu 20.10 onwards, so manually check  
-- name: Check for exa binary
-  stat:
+# exa is only in Ubuntu 20.10 onwards, so manually check
+- name: exa | Check for binary
+  ansible.builtin.stat:
     path: /usr/bin/exa
   register: exa
 
-- name: Verify exa binary is present
-  assert:
+- name: exa |Verify binary is present
+  ansible.builtin.assert:
     that: exa.stat.exists

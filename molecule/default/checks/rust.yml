@@ -1,9 +1,9 @@
 ---
-- name: Check for rust binary
-  stat:
+- name: rust | Check for binary
+  ansible.builtin.stat:
     path: /home/{{ username }}/.cargo/bin/rustc
   register: rust
 
-- name: Verify rust binary is present
-  assert:
+- name: rust | Verify binary is present
+  ansible.builtin.assert:
     that: rust.stat.exists

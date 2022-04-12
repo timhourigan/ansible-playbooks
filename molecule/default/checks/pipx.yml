@@ -1,0 +1,10 @@
+---
+- name: pipx | Get installed packages
+  pip_package_info:
+  register: pip_packages
+  become: yes
+  become_user: "{{ username }}"
+
+- name: pipx | Verify package is installed
+  ansible.builtin.assert:
+    that: "'pipx' in pip_packages.packages['pip']"

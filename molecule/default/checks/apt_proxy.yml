@@ -1,11 +1,11 @@
 ---
-- name: Check for configuration file
-  stat:
+- name: apt_proxy | Check for configuration file
+  ansible.builtin.stat:
     path: /etc/apt/apt.conf.d/00aptproxy
   register: aptproxy
   when: ansible_os_family == "Debian"
 
-- name: Verify configuration file is present
-  assert:
+- name: apt_proxy | Verify configuration file is present
+  ansible.builtin.assert:
     that: aptproxy.stat.exists
   when: ansible_os_family == "Debian"

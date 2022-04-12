@@ -6,7 +6,7 @@
     ansible.builtin.package_facts:
       manager: auto
   - name: Include vars
-    include_vars:
+    ansible.builtin.include_vars:
       file: vars/main.yml
   # Run checks
   - import_tasks: checks/autojump.yml

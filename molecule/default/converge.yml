@@ -3,34 +3,34 @@
   hosts: all
   pre_tasks:
     - name: Include vars
-      include_vars:
+      ansible.builtin.include_vars:
         file: vars/main.yml
     - name: Create user
       ansible.builtin.user:
         name: "{{ username }}"
         shell: /bin/bash
     - name: Setup APT Proxy
-      include_role:
+      ansible.builtin.include_role:
         name: apt_proxy
       when:
         - ansible_os_family == "Debian"
         - apt_proxy_url is defined
     - name: Update apt cache
-      apt:
+      ansible.builtin.apt:
         update_cache: true
       when: ansible_os_family == "Debian"
     - name: Update dnf cache
-      dnf:
+      ansible.builtin.dnf:
         update_cache: true
       when: ansible_os_family == "RedHat"
     - name: Install standard packages, required by Ansible modules
-      package:
+      ansible.builtin.package:
         name:
           - unzip
         state: present
   tasks:
     - name: Include roles
-      include_role:
+      ansible.builtin.include_role:
         name: "{{ item }}"
       with_items:
         - autojump

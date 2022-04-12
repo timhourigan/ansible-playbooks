@@ -1,13 +1,13 @@
 ---
 - name: bat | Verify package is installed
-  assert:
+  ansible.builtin.assert:
     that: "'bat' in ansible_facts.packages"
 
 - name: bat | Check for binary
-  stat:
+  ansible.builtin.stat:
     path: /usr/bin/bat
   register: bat
 
 - name: bat | Verify binary is present
-  assert:
+  ansible.builtin.assert:
     that: bat.stat.exists

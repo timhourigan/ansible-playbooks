@@ -1,4 +1,4 @@
 ---
 - name: autojump | Verify package is installed
-  assert:
+  ansible.builtin.assert:
     that: "'autojump' in ansible_facts.packages"

@@ -1,6 +1,6 @@
 ---
 - name: Install
-  package:
+  ansible.builtin.package:
     name: ripgrep
     state: present
   become: yes

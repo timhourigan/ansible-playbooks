@@ -1,6 +1,6 @@
 ---
 - name: Check if aleady installed
-  stat:
+  ansible.builtin.stat:
     path: /home/{{ username }}/.cargo/bin/rustc
   register: rust_installed
 

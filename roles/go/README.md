@@ -14,7 +14,7 @@ N/A
 
 ## Role Variables
 
-`username` - User account to install to
+N/A
 
 ## Dependencies
 

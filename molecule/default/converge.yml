@@ -37,6 +37,7 @@
         - bat
         - exa
         - fzf
+        - go
         - ripgrep
         # Removed for now, due to time taken to install
         # - rust

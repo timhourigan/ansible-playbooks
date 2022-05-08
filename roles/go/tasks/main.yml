@@ -1,0 +1,13 @@
+---
+- name: Check if aleady installed
+  ansible.builtin.stat:
+    path: /usr/local/go
+  register: go_installed
+
+- name: Install
+  ansible.builtin.unarchive:
+    src: "{{ go_url }}"
+    dest: /usr/local
+    remote_src: yes
+  become: yes
+  when: not go_installed.stat.exists

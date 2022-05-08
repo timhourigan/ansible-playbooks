@@ -1,0 +1,9 @@
+---
+- name: go | Check for binary
+  ansible.builtin.stat:
+    path: /usr/local/go/bin/go
+  register: go
+
+- name: go | Verify binary is present
+  ansible.builtin.assert:
+    that: go.stat.exists

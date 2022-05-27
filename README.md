@@ -6,6 +6,7 @@ A selection of Ansible playbooks and roles.
 
 | Roles                                  | Category     | Description                  |
 |:---------------------------------------|:-------------|:-----------------------------|
+| [alacritty](roles/alacritty/README.md) | System       | Terminal                     |
 | [apt_proxy](roles/apt_proxy/README.md) | System       | Configure APT proxy settings |
 | [autojump](roles/autojump/README.md)   | Productivity | Filesystem Navigation        |
 | [bat](roles/bat/README.md)             | Productivity | `cat` alternative            |

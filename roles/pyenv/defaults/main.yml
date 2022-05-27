@@ -1,0 +1,3 @@
+---
+pyenv_installer_url: https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer
+pyenv_path: /home/{{ username }}/.pyenv

@@ -1,0 +1,37 @@
+---
+- name: Check if aleady installed
+  ansible.builtin.stat:
+    path: /home/{{ username }}/.pyenv/bin/pyenv
+  register: pyenv_installed
+
+- name: Install dependencies
+  ansible.builtin.package:
+    name: git
+    state: present
+  become: yes
+  when: not pyenv_installed.stat.exists
+
+- name: Download pyenv-installer
+  ansible.builtin.get_url:
+    url: "{{ pyenv_installer_url }}"
+    dest: /home/{{ username }}/
+    mode: 0544
+  become: yes
+  become_user: "{{ username }}"
+  when: not pyenv_installed.stat.exists
+
+- name: Run pyenv-installer
+  ansible.builtin.command:
+    cmd: /home/{{ username }}/pyenv-installer --quiet -y
+    creates: /home/{{ username }}/.pyenv/bin/pyenv
+  become: yes
+  become_user: "{{ username }}"
+  when: not pyenv_installed.stat.exists
+
+- name: Remove pyenv-installer
+  ansible.builtin.file:
+    path: /home/{{ username }}/pyenv-installer
+    state: absent
+  become: yes
+  become_user: "{{ username }}"
+  when: not pyenv_installed.stat.exists

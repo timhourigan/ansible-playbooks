@@ -44,3 +44,6 @@ help: ## This menu
 $(VIRUAL_ENV):
 	@$(ECHO) "Creating virtual environment"
 	@$(PIPENV) sync --dev
+
+# FIXME - Add if community isn't in $HOME
+# ansible-galaxy collection install community.general

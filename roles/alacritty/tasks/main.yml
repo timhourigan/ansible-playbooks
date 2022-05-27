@@ -1,0 +1,11 @@
+---
+- name: Install dependencies
+  ansible.builtin.package:
+    name: "{{ alacritty_dependencies[ansible_distribution] }}"
+    state: present
+  become: yes
+
+- name: Install
+  community.general.cargo:
+    name: alacritty
+    state: latest

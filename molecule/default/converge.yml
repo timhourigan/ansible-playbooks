@@ -33,6 +33,7 @@
       ansible.builtin.include_role:
         name: "{{ item }}"
       with_items:
+        - alacrittyterm
         - autojump
         - bat
         - exa

@@ -1,0 +1,18 @@
+---
+- name: alacrittyterm | Check for binary
+  ansible.builtin.stat:
+    path: /usr/local/bin/alacritty
+  register: alacritty_bin
+
+- name: alacrittyterm | Verify binary is present
+  ansible.builtin.assert:
+    that: alacritty_bin.stat.exists
+
+- name: alacrittyterm | Check for terminfo
+  ansible.builtin.stat:
+    path: /etc/terminfo/a/alacritty
+  register: alacritty_terminfo
+
+- name: alacrittyterm | Verify terminfo is present
+  ansible.builtin.assert:
+    that: alacritty_terminfo.stat.exists

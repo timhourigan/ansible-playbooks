@@ -10,6 +10,6 @@
     path: /usr/bin/exa
   register: exa
 
-- name: exa |Verify binary is present
+- name: exa | Verify binary is present
   ansible.builtin.assert:
     that: exa.stat.exists

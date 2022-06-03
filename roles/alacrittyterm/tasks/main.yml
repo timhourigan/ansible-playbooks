@@ -5,7 +5,7 @@
     state: present
   become: yes
 
-- name: Install
+- name: Build
   community.general.cargo:
     name: alacritty
     state: latest
@@ -13,3 +13,13 @@
     PATH: /home/{{ username }}/.cargo/bin/:{{ ansible_env.PATH }}
   become: yes
   become_user: "{{ username }}"
+
+- name: Copy binary
+  ansible.builtin.copy:
+    src: /home/{{ username }}/.cargo/bin/alacritty
+    dest: /usr/local/bin/alacritty
+    remote_src: yes
+    owner: root
+    group: root
+    mode: 0755
+  become: yes

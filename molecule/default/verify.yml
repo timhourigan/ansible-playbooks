@@ -9,6 +9,7 @@
     ansible.builtin.include_vars:
       file: vars/main.yml
   # Run checks
+  - import_tasks: checks/alacrittyterm.yml
   - import_tasks: checks/autojump.yml
   - import_tasks: checks/bat.yml
   - import_tasks: checks/exa.yml

@@ -3,7 +3,7 @@ galaxy_info:
   description: Install alacritty
   license: MIT
   min_ansible_version: 2.5
-  role_name: alacritty
+  role_name: alacrittyterm
   namespace: timhourigan
   platforms:
     - name: Debian

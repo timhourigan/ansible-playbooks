@@ -9,3 +9,7 @@
   community.general.cargo:
     name: alacritty
     state: latest
+  environment:
+    PATH: /home/{{ username }}/.cargo/bin/:{{ ansible_env.PATH }}
+  become: yes
+  become_user: "{{ username }}"

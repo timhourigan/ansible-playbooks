@@ -1,6 +1,8 @@
-# alacritty
+# alacrittyterm
 
 Installs [alacritty](https://github.com/alacritty/alacritty).
+
+Note, the role is called `alacrittyterm` because ansible ignores the role, for some unknown reason, if it is called `alacritty`.
 
 ## Requirements
 
@@ -13,14 +15,14 @@ N/A
 
 ## Dependencies
 
-- `rust` role
+- `rust` role, configured in `meta/main.yml`
 
 ## Example Playbook
 
 ```yaml
     - hosts: servers
       roles:
-         - { role: alacritty }
+         - { role: alacrittyterm }
 ```
 
 ## License

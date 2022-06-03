@@ -2,7 +2,7 @@ galaxy_info:
   author: Tim Hourigan
   description: Configure APT proxy settings
   license: MIT
-  min_ansible_version: 2.5
+  min_ansible_version: "2.5"
   role_name: apt_proxy
   namespace: timhourigan
   platforms:

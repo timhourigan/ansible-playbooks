@@ -9,10 +9,10 @@
     that: alacritty_bin.stat.exists
 
 - name: alacrittyterm | Check for terminfo
-  ansible.builtin.stat:
-    path: /etc/terminfo/a/alacritty
-  register: alacritty_terminfo
+  ansible.builtin.command:
+    cmd: infocmp alacritty
+  register: terminfo
 
-- name: alacrittyterm | Verify terminfo is present
+- name: alacrittyterm | Verify terminfo
   ansible.builtin.assert:
-    that: alacritty_terminfo.stat.exists
+    that: terminfo.rc == 0

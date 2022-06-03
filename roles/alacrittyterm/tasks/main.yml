@@ -23,3 +23,34 @@
     group: root
     mode: 0755
   become: yes
+
+- name: Create temporary repository directory
+  ansible.builtin.tempfile:
+    state: directory
+    suffix: alacrittyrepo
+  register: repo_dir
+
+- name: Install git
+  ansible.builtin.package:
+    name: git
+    state: present
+  become: yes
+
+- name: Clone repository
+  ansible.builtin.git:
+    repo: https://github.com/alacritty/alacritty.git
+    dest: "{{ repo_dir.path }}"
+    single_branch: yes
+    version: master
+
+- name: Set terminfo
+  ansible.builtin.command:
+    cmd: tic -xe alacritty,alacritty-direct {{ repo_dir.path }}/extra/alacritty.info
+    creates: /etc/terminfo/a/alacritty
+  become: yes
+
+- name: Remove temporary repo directory
+  ansible.builtin.file:
+    path: "{{ repo_dir.path }}"
+    state: absent
+  when: repo_dir.path is defined

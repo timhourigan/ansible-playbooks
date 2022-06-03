@@ -11,8 +11,17 @@
 - name: alacrittyterm | Check for terminfo
   ansible.builtin.command:
     cmd: infocmp alacritty
-  register: terminfo
+  register: alacritty_terminfo
 
 - name: alacrittyterm | Verify terminfo
   ansible.builtin.assert:
-    that: terminfo.rc == 0
+    that: alacritty_terminfo.rc == 0
+
+- name: alacrittyterm | Check icon
+  ansible.builtin.stat:
+    path: /usr/share/pixmaps/Alacritty.svg
+  register: alacritty_icon
+
+- name: alacrittyterm | Verify icon
+  ansible.builtin.assert:
+    that: alacritty_icon.stat.exists

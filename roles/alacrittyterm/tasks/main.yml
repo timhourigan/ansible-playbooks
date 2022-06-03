@@ -49,8 +49,21 @@
     creates: /etc/terminfo/a/alacritty
   become: yes
 
+- name: Copy icon
+  ansible.builtin.copy:
+    src: "{{ repo_dir.path }}/extra/logo/alacritty-term.svg"
+    dest: /usr/share/pixmaps/Alacritty.svg
+    remote_src: yes
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+
 - name: Remove temporary repo directory
   ansible.builtin.file:
     path: "{{ repo_dir.path }}"
     state: absent
   when: repo_dir.path is defined
+
+# sudo desktop-file-install extra/linux/Alacritty.desktop
+# sudo update-desktop-database

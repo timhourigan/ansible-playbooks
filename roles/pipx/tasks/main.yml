@@ -1,4 +1,13 @@
 ---
+- name: Install dependencies
+  ansible.builtin.package:
+    name:
+      - python3-venv
+      - python3-pip
+    state: present
+  become: yes
+  when: ansible_os_family == "Debian"
+
 - name: Install
   ansible.builtin.pip:
     name: pipx
@@ -8,6 +17,6 @@
 
 - name: Run ensurepath
   ansible.builtin.command: python3 -m pipx ensurepath
+  changed_when: false
   become: yes
   become_user: "{{ username }}"
-  changed_when: false

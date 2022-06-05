@@ -42,3 +42,4 @@
         # Removed for now, due to time taken to install
         # - rust
         - pipx
+        - pyenv

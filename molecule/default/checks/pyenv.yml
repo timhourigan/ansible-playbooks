@@ -1,0 +1,9 @@
+---
+- name: pyenv | Check for binary
+  ansible.builtin.stat:
+    path: /home/{{ username }}/.pyenv/bin/pyenv
+  register: pyenv
+
+- name: pyenv | Verify binary is present
+  ansible.builtin.assert:
+    that: pyenv.stat.exists

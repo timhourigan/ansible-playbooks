@@ -6,7 +6,7 @@
 
 - name: Install dependencies
   ansible.builtin.package:
-    name: git
+    name: "{{ pyenv_dependencies[ansible_distribution] }}"
     state: present
   become: yes
   when: not pyenv_installed.stat.exists

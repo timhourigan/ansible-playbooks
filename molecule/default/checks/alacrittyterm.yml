@@ -12,6 +12,7 @@
   ansible.builtin.command:
     cmd: infocmp alacritty
   register: alacritty_terminfo
+  changed_when: false
 
 - name: alacrittyterm | Verify terminfo
   ansible.builtin.assert:

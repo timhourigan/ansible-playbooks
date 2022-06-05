@@ -67,3 +67,28 @@
 
 # sudo desktop-file-install extra/linux/Alacritty.desktop
 # sudo update-desktop-database
+
+
+# install man-db
+#
+# sudo mkdir -p /usr/local/share/man/man1
+# gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+# gzip -c extra/alacritty-msg.man | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
+
+# 
+#
+# Playbook run took 0 days, 0 hours, 1 minutes, 25 seconds
+# CRITICAL Idempotence test failed because of the following tasks:
+# *  => alacrittyterm : Create temporary repository directory
+# *  => alacrittyterm : Create temporary repository directory
+# *  => alacrittyterm : Create temporary repository directory
+# *  => alacrittyterm : Clone repository
+# *  => alacrittyterm : Clone repository
+# *  => alacrittyterm : Clone repository
+# *  => alacrittyterm : Set terminfo
+# *  => alacrittyterm : Remove temporary repo directory
+# *  => alacrittyterm : Remove temporary repo directory
+# *  => alacrittyterm : Remove temporary repo directory
+# WARNING  An error occurred during the test sequence action: 'idempotence'. Cleaning up.
+# INFO     Running default > cleanup
+# WARNING  Skipping, cleanup playbook not configured.

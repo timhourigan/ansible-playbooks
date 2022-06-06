@@ -4,6 +4,13 @@
     path: /home/{{ username }}/.pyenv/bin/pyenv
   register: pyenv_installed
 
+# 
+# TASK [pyenv : Download pyenv-installer] ****************************************
+# [WARNING]: Module remote_tmp /home/test.user/.ansible/tmp did not exist and was
+# created with a mode of 0700, this may cause issues when running as another
+# user. To avoid this, create the remote_tmp dir with the correct permissions
+# manually
+
 - name: Install dependencies
   ansible.builtin.package:
     name: "{{ pyenv_dependencies[ansible_distribution] }}"

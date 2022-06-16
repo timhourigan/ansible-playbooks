@@ -9,6 +9,13 @@
       ansible.builtin.user:
         name: "{{ username }}"
         shell: /bin/bash
+    # Needed by Ansible modules (e.g. ansible.builtin.get_url)
+    - name: Create Ansible remote_tmp
+      ansible.builtin.file:
+        path: /home/{{ username }}/.ansible/tmp
+        state: directory
+      become: yes
+      become_user: "{{ username }}"
     - name: Setup APT Proxy
       ansible.builtin.include_role:
         name: apt_proxy
@@ -42,3 +49,4 @@
         # Removed for now, due to time taken to install
         # - rust
         - pipx
+        - pyenv

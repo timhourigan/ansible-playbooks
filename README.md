@@ -4,17 +4,18 @@ A selection of Ansible playbooks and roles.
 
 ## Roles
 
-| Roles                                  | Category     | Description                  |
-|:---------------------------------------|:-------------|:-----------------------------|
-| [apt_proxy](roles/apt_proxy/README.md) | System       | Configure APT proxy settings |
-| [autojump](roles/autojump/README.md)   | Productivity | Filesystem Navigation        |
-| [bat](roles/bat/README.md)             | Productivity | `cat` alternative            |
-| [exa](roles/exa/README.md)             | Productivity | `ls` alternative             |
-| [fzf](roles/fzf/README.md)             | Productivity | Fuzzy Finder                 |
-| [go](roles/go/README.md)               | Development  | Go Language                  |
-| [ripgrep](roles/ripgrep/README.md)     | Productivity | `grep` alternative           |
-| [pipx](roles/pipx/README.md)           | Productivity | Python application installer |
-| [rust](roles/rust/README.md)           | Development  | Rust Language                |
+| Roles                                  | Description                  |
+|:---------------------------------------|:-----------------------------|
+| [apt_proxy](roles/apt_proxy/README.md) | Configure APT proxy settings |
+| [autojump](roles/autojump/README.md)   | Filesystem Navigation        |
+| [bat](roles/bat/README.md)             | `cat` alternative            |
+| [exa](roles/exa/README.md)             | `ls` alternative             |
+| [fzf](roles/fzf/README.md)             | Fuzzy Finder                 |
+| [go](roles/go/README.md)               | Go Language                  |
+| [ripgrep](roles/ripgrep/README.md)     | `grep` alternative           |
+| [pipx](roles/pipx/README.md)           | Python application installer |
+| [pyenv](roles/pyenv/README.md)         | Python versions manager      |
+| [rust](roles/rust/README.md)           | Rust Language                |
 
 ## Playbooks
 

@@ -15,4 +15,6 @@
     - roles/autojump
     - roles/fzf
     - roles/go
+    - roles/pipx
+    - roles/pyenv
     - roles/rust

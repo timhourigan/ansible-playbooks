@@ -6,15 +6,24 @@
 
 - name: Install dependencies
   ansible.builtin.package:
-    name: git
+    name: "{{ pyenv_dependencies[ansible_distribution] }}"
     state: present
   become: yes
+  when: not pyenv_installed.stat.exists
+
+- name: Create temporary directory
+  ansible.builtin.tempfile:
+    state: directory
+    suffix: pyenv
+  register: installer_dir
+  become: yes
+  become_user: "{{ username }}"
   when: not pyenv_installed.stat.exists
 
 - name: Download pyenv-installer
   ansible.builtin.get_url:
     url: "{{ pyenv_installer_url }}"
-    dest: /home/{{ username }}/
+    dest: "{{ installer_dir.path }}"
     mode: 0544
   become: yes
   become_user: "{{ username }}"
@@ -22,7 +31,7 @@
 
 - name: Run pyenv-installer
   ansible.builtin.command:
-    cmd: /home/{{ username }}/pyenv-installer --quiet -y
+    cmd: "{{ installer_dir.path }}/pyenv-installer --quiet -y"
     creates: /home/{{ username }}/.pyenv/bin/pyenv
   become: yes
   become_user: "{{ username }}"
@@ -30,7 +39,7 @@
 
 - name: Remove pyenv-installer
   ansible.builtin.file:
-    path: /home/{{ username }}/pyenv-installer
+    path: "{{ installer_dir.path }}"
     state: absent
   become: yes
   become_user: "{{ username }}"

@@ -1,4 +1,4 @@
 ---
 username: test.user
 # Example APT Cache configuration
-# apt_proxy_url: http://192.168.10.123:3142
+# apt_proxy_url: http://192.168.1.123:3142

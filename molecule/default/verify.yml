@@ -14,6 +14,7 @@
   - import_tasks: checks/exa.yml
   - import_tasks: checks/fzf.yml
   - import_tasks: checks/go.yml
+  - import_tasks: checks/nix.yml
   - import_tasks: checks/ripgrep.yml
   # Removed for now, due to time taken to install
   # - import_tasks: checks/rust.yml

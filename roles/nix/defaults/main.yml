@@ -8,14 +8,18 @@ nix_dependencies:
   {
     Fedora:
       [
-        gnupg2
+        curl,
+        gnupg2,
+        xz
       ],
     Debian:
       [
+        curl,
         gnupg2
       ],
     Ubuntu:
       [
+        curl,
         gnupg2
       ]
   }

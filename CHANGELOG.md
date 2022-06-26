@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.15.0] - 2022-06-26
+
+### Added
+
+- `nix` package manager
+
 ## [0.14.0] - 2022-06-08
 
 ### Added

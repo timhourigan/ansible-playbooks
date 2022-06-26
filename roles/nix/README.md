@@ -1,6 +1,6 @@
 # pyenv
 
-Installs [nix package manager](https://nixos.org/download.html#nix-verify-installation).
+Installs [nix package manager](https://nixos.org/download.html#nix-verify-installation) - Single user mode.
 
 ## Environment Setup
 

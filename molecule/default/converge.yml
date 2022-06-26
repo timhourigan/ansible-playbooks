@@ -45,6 +45,7 @@
         - exa
         - fzf
         - go
+        - nix
         - ripgrep
         # Removed for now, due to time taken to install
         # - rust

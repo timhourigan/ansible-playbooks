@@ -1,0 +1,84 @@
+---
+- name: Check if aleady installed
+  ansible.builtin.stat:
+    path: /home/{{ username }}/.nix-profile/bin/nix
+  register: nix_installed
+
+- name: Install dependencies
+  ansible.builtin.package:
+    name: "{{ nix_dependencies[ansible_distribution] }}"
+    state: present
+  become: yes
+  when: not nix_installed.stat.exists
+
+- name: Create temporary directory
+  ansible.builtin.tempfile:
+    state: directory
+    suffix: nix
+  register: installer_dir
+  become: yes
+  become_user: "{{ username }}"
+  when: not nix_installed.stat.exists
+
+- name: Download installer
+  ansible.builtin.get_url:
+    url: "{{ nix_installer_url }}"
+    dest: "{{ installer_dir.path }}"
+    mode: 0544
+  become: yes
+  become_user: "{{ username }}"
+  when: not nix_installed.stat.exists
+
+- name: Download installer signature
+  ansible.builtin.get_url:
+    url: "{{ nix_installer_url }}.asc"
+    dest: "{{ installer_dir.path }}"
+    mode: 0544
+  become: yes
+  become_user: "{{ username }}"
+  when: not nix_installed.stat.exists
+
+- name: Add gpg key
+  ansible.builtin.command:
+    cmd: gpg2 --keyserver hkps://keyserver.ubuntu.com --recv-keys {{ nix_key }}
+  register: gpg_key
+  changed_when: false
+  failed_when: gpg_key.rc != 0
+  when: not nix_installed.stat.exists
+
+- name: Verify install script
+  ansible.builtin.command:
+    cmd: gpg2 --verify "{{ installer_dir.path }}/{{ nix_install_script }}.asc"
+  register: gpg_verify
+  changed_when: false
+  failed_when: gpg_verify.rc != 0
+  when: not nix_installed.stat.exists
+
+- name: Create Nix directory
+  ansible.builtin.file:
+    path: "{{ nix_path }}"
+    state: directory
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
+  become: yes
+  when: not nix_installed.stat.exists
+
+- name: Install
+  ansible.builtin.command:
+    cmd: "{{ installer_dir.path }}/{{ nix_install_script }} --no-daemon --no-modify-profile"
+    creates: /home/{{ username }}/.nix-profile/bin/nix
+  register: nix_install
+  become: yes
+  become_user: "{{ username }}"
+  # changed_when: false
+  failed_when: nix_install.rc != 0
+  when: not nix_installed.stat.exists
+
+- name: Remove installer
+  ansible.builtin.file:
+    path: "{{ installer_dir.path }}"
+    state: absent
+  become: yes
+  become_user: "{{ username }}"
+  when: not nix_installed.stat.exists

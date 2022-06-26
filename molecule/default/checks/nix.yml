@@ -1,0 +1,9 @@
+---
+- name: nix | Check for binary
+  ansible.builtin.stat:
+    path: /home/{{ username }}/.nix-profile/bin/nix
+  register: nix
+
+- name: nix | Verify binary is present
+  ansible.builtin.assert:
+    that: nix.stat.exists

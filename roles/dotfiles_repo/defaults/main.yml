@@ -1,0 +1,21 @@
+---
+dotfiles_repository: https://github.com/timhourigan/dotfiles
+dotfiles_path: /home/{{ username }}/.dotfiles
+dotfiles_dependencies:
+  {
+    Fedora:
+      [
+        git,
+        stow
+      ],
+    Debian:
+      [
+        git,
+        stow
+      ],
+    Ubuntu:
+      [
+        git,
+        stow
+      ]
+  }

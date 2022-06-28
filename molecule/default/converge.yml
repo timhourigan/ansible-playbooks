@@ -42,6 +42,7 @@
       with_items:
         - autojump
         - bat
+        - dotfiles_repo
         - exa
         - fzf
         - go

@@ -1,0 +1,9 @@
+---
+- name: dotfiles_repo | Check for path
+  ansible.builtin.stat:
+    path: /home/{{ username }}/.dotfiles
+  register: dotfiles_repo
+
+- name: dotfiles_repo | Verify path is present
+  ansible.builtin.assert:
+    that: dotfiles_repo.stat.exists

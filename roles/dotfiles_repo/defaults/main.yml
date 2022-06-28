@@ -19,3 +19,5 @@ dotfiles_dependencies:
         stow
       ]
   }
+# From https://github.com/timhourigan/dotfiles
+dotfiles_list: [alacritty, bashrc, git, tmux, vim]

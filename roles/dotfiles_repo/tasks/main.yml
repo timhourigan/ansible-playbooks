@@ -19,7 +19,25 @@
     version: main
   become: yes
   become_user: "{{ username }}"
+
+- name: Install dotfiles
+  ansible.builtin.command: stow {{ dotfile }}
+  args:
+    chdir: "{{ dotfiles_path }}"
+  with_items: "{{ dotfiles_list }}"
+  loop_control:
+    loop_var: dotfile
+  become: yes
+  become_user: "{{ username }}"
   when: not dotfiles_installed.stat.exists
 
-
-# Stow a list of dotfiles
+- name: Install dotfile sourcing
+  ansible.builtin.lineinfile:
+    # https://github.com/timhourigan/dotfiles/tree/main/bashrc
+    path: "/home/{{ username }}/.bashrc"
+    line: if [ -f ~/.bash_extras ]; then . ~/.bash_extras; fi
+    create: yes
+    mode: 0644
+    insertbefore: EOF
+  become: yes
+  become_user: "{{ username }}"

@@ -1,6 +1,6 @@
-# dotfiles
+# dotfiles_repo
 
-Installs a GNU stow based dotfile repository.
+Installs a GNU stow based dotfile repository
 
 ## Requirements
 
@@ -12,14 +12,14 @@ Package dependencies are managed by the role
 
 ## Dependencies
 
-N/A
+Package dependencies are managed by the role
 
 ## Example Playbook
 
 ```yaml
     - hosts: servers
       roles:
-         - { role: dotfiles }
+         - { role: dotfiles_repo }
 ```
 
 ## License

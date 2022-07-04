@@ -17,6 +17,18 @@ default: help
 test: $(VIRUAL_ENV) ## Test Ansible roles
 	@$(PIPENV) run $(TEST_ANSIBLE)
 
+.PHONY: test-debian
+test-debian: $(VIRUAL_ENV) ## Test Ansible roles in Debian
+	@$(PIPENV) run $(TEST_ANSIBLE) --platform-name molecule-debian-11
+
+.PHONY: test-fedora
+test-fedora: $(VIRUAL_ENV) ## Test Ansible roles in Fedora
+	@$(PIPENV) run $(TEST_ANSIBLE) --platform-name molecule-fedora
+
+.PHONY: test-ubuntu
+test-ubuntu: $(VIRUAL_ENV) ## Test Ansible roles in Ubuntu
+	@$(PIPENV) run $(TEST_ANSIBLE) --platform-name molecule-ubuntu-2004
+
 .PHONY: lint
 lint: $(VIRUAL_ENV) ## Lint source
 	@$(PIPENV) run $(LINT_ANSIBLE) $(ROLES_PATH)

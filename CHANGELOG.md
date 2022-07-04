@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.16.0] - 2022-07-04
+
+### Added
+
+- `dotfiles_repo` GNU Stow managed dotfiles
+
 ## [0.15.0] - 2022-06-26
 
 ### Added

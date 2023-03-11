@@ -18,19 +18,19 @@
     "default": {
         "ansible": {
             "hashes": [
-                "sha256:3a4516072660e34d4647db1627c401dffcbec23c50633d71ac7902e8c934e370",
-                "sha256:641a2c27bc5768f9a8ad14880f1f6e571c1f2af1d45e76f271d76e3f74754c53"
+                "sha256:2e9f519441780595ab173ac017210efc94c58633c9bc6e55917745d214cb4332",
+                "sha256:73144e7e602715fab623005d2e71e503dddae86185e061fed861b2449c5618ea"
             ],
             "index": "pypi",
-            "version": "==6.0.0"
+            "version": "==7.0.0"
         },
         "ansible-core": {
             "hashes": [
-                "sha256:451be59d8494bc302ff3a70f4d079d64b069e10b482fe451a58e2e733be7b8c5",
-                "sha256:fef93e996596550c537275e6acc573f383d121d5cee990f0f1d02353618f9af9"
+                "sha256:093a4bc4a1259eaeb56ea37ec1d33cf1836c88f39281d89197f8d3480e068a58",
+                "sha256:a4b36bfdd7aa3534d449e9ae6a9fd82d8e513fda8caaf5d18e1e27d217151c8c"
             ],
-            "markers": "python_version >= '3.8'",
-            "version": "==2.13.8"
+            "markers": "python_version >= '3.9'",
+            "version": "==2.14.3"
         },
         "cffi": {
             "hashes": [
@@ -275,11 +275,11 @@
         },
         "ansible-core": {
             "hashes": [
-                "sha256:451be59d8494bc302ff3a70f4d079d64b069e10b482fe451a58e2e733be7b8c5",
-                "sha256:fef93e996596550c537275e6acc573f383d121d5cee990f0f1d02353618f9af9"
+                "sha256:093a4bc4a1259eaeb56ea37ec1d33cf1836c88f39281d89197f8d3480e068a58",
+                "sha256:a4b36bfdd7aa3534d449e9ae6a9fd82d8e513fda8caaf5d18e1e27d217151c8c"
             ],
-            "markers": "python_version >= '3.8'",
-            "version": "==2.13.8"
+            "markers": "python_version >= '3.9'",
+            "version": "==2.14.3"
         },
         "ansible-lint": {
             "hashes": [
@@ -659,7 +659,7 @@
                 "sha256:5a35f8d1870171d9acc47b99612dc146129b631baf04970128b568f190d0cc30",
                 "sha256:7c9a5e412688bc771c67432cbfebcdd686c93ce6484913dccf06cb5a0bea35a1"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==2.2.0"
         },
         "markupsafe": {
